@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+
+.topnav {
+width: 1500px;
+background-color: #3F474F;
+height: 48px
+}
+
+.topnav a {
+  float: left;
+  color: #3F474F;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: "Helvetica";
+  color: #B2BBBE;
+  background-color: #3F474F
+
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+background-color: #4CAF50;
+color: #B2BBBE;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+background-color: #4CAF50; /*green*/
+color: white;
+}
+
+h1 h2{
+  font-family: "Helvetica";
+}
+
+p {
+font-family: "Helvetica";
+}
+
+body {
+  background-color: gray;
+  margin: 0px;
+  font-family: "Helvetica";
+}
+
+.productdescription {float:left;
+width: 55%;
+}
+
+.price  {float:right}
+
+.Product {width:75%;
+  display:flex
+}
+
+.price {
+  padding: 5px
+}
+
+.ATC  {
+  padding: 50px;
+}
+
+
+
+</style>
+
+<script>
+
+function addescription(clickme){
+//  console.log(this)
+
+}
+
+function myFunction(event) {
+  var x = event.target;
+  console.log(x.previousElementSibling.previousElementSibling.previousElementSibling)
+  cart.items.push(x.previousElementSibling.previousElementSibling.previousElementSibling.innerHTML)
+  cart.items.push(x.previousElementSibling.previousElementSibling.innerHTML)
+  cart.totalcost = cart.totalcost + Number(x.previousElementSibling.previousElementSibling.innerHTML.replace('Price: $',""))
+  //need to do a few things, add priec, and add quantity, how can I \
+
+
+}
+
+
+
+var cart ={}
+cart.items=[]
+cart.totalcost = 0
+window.addEventListener('load', function() {
+  var clickme = document.getElementsByClassName('ATC')
+  for (var i = 0; i< clickme.length; i++) {
+
+    clickme[i].addEventListener('click',myFunction)
+  }
+
+})
+
+document.cookie = "hello=true";
+document.cookie = "doSomethingOnlyOnce=true; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+document.cookie = "person=beau; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"
+
+document.cookie = "person=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+
+
+</script>
+</head>
+<body>
+
+  <div class="topnav">
+  <a href="Home.html">Home</a>
+  <a href="Blog.html">Blog</a>
+  <a href="ContactUs.html">Contact</a>
+  <a href="AboutUs.html">About</a>
+  <a href = "Product.html">Product</a>
+  </div>
+
+<div class = "main">
+  <h1> Product </h1>
+  <p> Here is an example list of our products</p>
+
+  <div class = "Product">
+    <h1 class = 'productdescription'>Item: Nintendo Entertainment System</h1>
+    <h1 class = 'price'>Price: $99.99</h1>
+    <img src = 'Products/NES.jpg' height = '150px', width = '150px'>
+    <h1 class = 'ATC'>Add to Cart</h1>
+
+  </div>
+  <div class = "Product">
+    <h1 class = 'productdescription'>Item: Super Nintendo Entertainment System</h1>
+    <h1 class = 'price'>Price: $149.99</h1>
+    <img src = 'Products/SNES.png' height = '150px', width = '150px'>
+    <h1 class = 'ATC'>Add to Cart</h1>
+  </div>
+  <div class = "Product">
+    <h1 class = 'productdescription'>Item: Nintendo 64</h1>
+    <h1 class = 'price'>Price: $199.99</h1>
+    <img src = 'Products/Nintendo64.jpg' height = '150px', width = '150px'>
+    <h1 class = 'ATC' >Add to Cart</h1>
+
+  </div>
+  <div class = "Product">
+    <h1 class = 'productdescription'>Item: Nintendo Wii</h1>
+    <h1 class = 'price'>Price: $299.99</h1>
+    <img src = 'Products/Nintendo Wii U.jpg' height = '150px', width = '150px'>
+    <h1 class = 'ATC'>Add to Cart</h1>
+
+  </div>
+  <div class = "Product">
+    <h1 class = 'productdescription'>Item: Playstation 1</h1>
+    <h1 class = 'price'>Price: $149.99</h1>
+    <img src = 'Products/SNES.png' height = '150px', width = '150px'>
+    <h1 class = 'ATC'>Add to Cart</h1>
+
+  </div>
+  <div class = "Product">
+    <h1 class = 'productdescription'>Item: Playstation 2</h1>
+    <h1 class = 'price'>Price: $99.99</h1>
+    <img src = 'Products/playstation2slim.jpg' height = '150px', width = '150px'>
+    <h1 class = 'ATC'>Add to Cart</h1>
+  </div>
+
+
+
+
+  </div>
+</div>
+
+</body>
+</html>
