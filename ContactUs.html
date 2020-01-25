@@ -20,16 +20,17 @@ function foo() {
 
 
   const Http = new XMLHttpRequest();
-  const url='https://602-KKD-677.mktorest.com/identity/oauth/token?grant_type=client_credentials&client_id=707b6110-7f7c-4936-b83b-9d9d0f2f5bb9&client_secret=9rXVhQd1atmnZA9zyV2uGqTEdh9U14S1';
 
   
-  var favDrink = prompt("What's your favorite cocktail drink?");
+  var secretkey = prompt("What's your secret key");
+  var client_id = prompt("What is your cliend_id")
+    const url='https://602-KKD-677.mktorest.com/identity/oauth/token?grant_type=client_credentials&client_id=" + client_id + "&client_secret=' + secretkey;
+
   Http.open("GET", url);
   Http.send();
   Http.onload = function(){
        console.log(Http.responseText)
     }
-  console.log(favDrink)
 
 }
 
