@@ -7,23 +7,11 @@ var first = 'tomato'
 var last = 'potato'
 var email = 'gorato'
 var access_token = 'momato'
-var image
+var image  = ''
 
 
 
-function formvar()
-{
-  first = document.getElementById("firstname").value
-  last = document.getElementById("lastname").value
-  email = document.getElementById("email").value
 
-  foo()
-
-  document.getElementById("firstname").value = "";
-  document.getElementById("lastname").value = "";
-  document.getElementById("email").value = "";
-
-}
 
 function createorupdate()
 
@@ -178,7 +166,14 @@ body {
 <form id="mktoForm_1046"></form>
 <script>MktoForms2.loadForm("//app-sjdemo1.marketo.com", "602-KKD-677", 1046);</script>
 </div>
-  <div id = 'headshot'></div>
+  <div id = 'headshot'>function formvar()
+    <script>
+{
+  form = document.getElementById("mktoForm_1046")
+  console.log(form)
+}
+    </script>
+</div>
 
 </div>
 
