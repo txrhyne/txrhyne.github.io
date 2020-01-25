@@ -23,7 +23,7 @@ function foo() {
 
   
   var secretkey = prompt("What's your secret key");
-  var client_id = prompt("What is your cliend_id")
+  var client_id = prompt("What is your client_id")
     const url='https://602-KKD-677.mktorest.com/identity/oauth/token?grant_type=client_credentials&client_id=" + client_id + "&client_secret=' + secretkey;
 
   Http.open("GET", url);
