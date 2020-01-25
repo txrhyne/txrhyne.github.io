@@ -15,26 +15,7 @@ console.log('this works')
 
 
 
-function yourimage()
-{
-  //console.log('bout to see dat url')
 
-const Http1 = new XMLHttpRequest();
-const url = "https://602-KKD-677.mktorest.com/rest/v1/leads.json?access_token=" + access_token + "&filterType=email&filterValues=" + email + "&fields=firstName,lastName,email,headshot"
-
-
-
-Http1.onload = function(){
-var image = JSON.parse(Http1.responseText).result[0].headshot//document.getElementById('headshot').innerHTML = '<img src =' + image + '>'
-console.log(image)
-document.getElementById("headshot").innerHTML = '<img src =' + image + '>';
-
-}
-
-Http1.open("GET", url);
-Http1.send();
-
-}
 
 function foo() {
 
@@ -42,12 +23,13 @@ function foo() {
   const Http = new XMLHttpRequest();
   const url='https://602-KKD-677.mktorest.com/identity/oauth/token?grant_type=client_credentials&client_id=707b6110-7f7c-4936-b83b-9d9d0f2f5bb9&client_secret=9rXVhQd1atmnZA9zyV2uGqTEdh9U14S1';
 
-  Http.onload = function(){
-       access_token = JSON.parse(Http.responseText).access_token
-       yourimage()
-}
+  
+  
   Http.open("GET", url);
   Http.send();
+  Http.onload = function(){
+       console.log(Http.responseText)
+    }
 }
 
 
