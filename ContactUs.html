@@ -42,8 +42,9 @@ function foo(email) {
     console.log(url)
     console.log(Http1.responseText)
       var headshotobj = JSON.parse(Http.responseText)
-      var imageurl =  headshotobj.result[0]['headshot']
-      document.getElementById('mktoForm_1046').innerHTML =  '<img src =' + imageurl + '>'
+      
+      console.log(headshotobj.result[0]['headshot'])
+      //document.getElementById('mktoForm_1046').innerHTML =  '<img src =' + imageurl + '>'
     
     }
    
