@@ -36,7 +36,14 @@ function foo() {
    var response = Http.responseText;
    var access_token = response.access_token;
    const url = 'https://602-KKD-677.mktorest.com//rest/v1/leads/describe.json?access_token=' + access_token;
-   console.log(url)
+   const Http = new XMLHttpRequest();
+   Http.open("GET", url);
+   Http.send();
+   Http.onreadystatechange = (e) => {
+     console.log(Http.responseText)
+   }
+    
+   
   }
   return response
 
