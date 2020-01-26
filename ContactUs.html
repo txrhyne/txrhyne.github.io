@@ -32,21 +32,17 @@ function foo() {
   Http.send();
 
   Http.onreadystatechange = (e) => {
-   var response = JSON.parse(Http.responseText);
-   var access_token = response[access_token]
-       console.log(response[access_token])
-
-   const url = 'https://602-KKD-677.mktorest.com//rest/v1/leads/describe.json?access_token=' + access_token;
-   
+   var obj = JSON.parse(Http.responseText);
     
+    console.log(typeof obj.access_token)
+   var url = 'hello' + obj.access_token
+      console.log(url)
    
-  }
-  return response
-
-}
+}}
 
 var response = foo()
 
+  // const url = 'https://602-KKD-677.mktorest.com//rest/v1/leads/describe.json?access_token=' + access_token;
 
 //const describe = new XMLHttpRequest();
 //const durl = 'https://602-KKD-677.mktorest.com/rest/v1/leads.json?access_token=' + access_token +'&filterType=email&filterValues=tomrhyne@yahoo.com'
