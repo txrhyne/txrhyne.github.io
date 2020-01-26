@@ -33,7 +33,7 @@ function foo() {
   Http.send();
 
   Http.onreadystatechange = (e) => {
-   console.log(Http.responseText.access_token)
+   var response = Http.responseText
   }
 
 }
