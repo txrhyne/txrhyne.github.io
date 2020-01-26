@@ -32,7 +32,7 @@ function foo() {
   Http.send();
 
   Http.onreadystatechange = (e) => {
-   var response = Http.responseText;
+   var response = JSON.parse(Http.responseText);
     console.log(response)
    var access_token = response[access_token]
        console.log(response[access_token])
