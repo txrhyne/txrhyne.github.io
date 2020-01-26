@@ -34,13 +34,15 @@ function foo(email) {
   Http.onreadystatechange = (e) => {
    var obj = JSON.parse(Http.responseText);
     
-   var url = 'https://602-KKD-677.mktorest.com//rest/v1/leads.json?access_token=' + obj.access_token  + '&filterType=email&filterValues=' + email +'&fields=firstName,lastName,email'
+   var url = 'https://602-KKD-677.mktorest.com//rest/v1/leads.json?access_token=' + obj.access_token  + '&filterType=email&filterValues=' + email +'&fields=firstName,lastName,email,headshot'
       const Http1 = new XMLHttpRequest();
     Http1.open("GET", url);
   Http1.send();
     Http1.onreadystatechange = (e) => {
     console.log(url)
     console.log(Http1.responseText)
+      var headshotobj = JSON.parse(Http.responseText)
+    
     
     }
    
