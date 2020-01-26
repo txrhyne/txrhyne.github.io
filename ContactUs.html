@@ -20,12 +20,10 @@ function foo() {
 
 
   const Http = new XMLHttpRequest();
-  //var secretkey = prompt("What's your secret key");
+  var secretkey = prompt("What's your secret key");
 
- // var client_id = prompt("What is your client_id")
+  var client_id = prompt("What is your client_id")
   
-  var secretkey = 'KBhYWCODeCuGY1hGdLJEvmT8rD45D5wP'
-  var client_id = 'f2e7040b-8701-40bf-84e7-dea8c57eeb0d'
 
   const url='https://602-KKD-677.mktorest.com/identity/oauth/token?grant_type=client_credentials&client_id=' + client_id + '&client_secret=' + secretkey
   
