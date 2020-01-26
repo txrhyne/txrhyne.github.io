@@ -21,13 +21,10 @@ function foo() {
 
   const Http = new XMLHttpRequest();
 
-  
-  var secretkey = prompt("What's your secret key");
   var client_id = prompt("What is your client_id")
-  console.log(secretkey)
-  console.log(typeof secretkey)
-  console.log(client_id)
-    console.log(typeof client_id)
+  var secretkey = prompt("What's your secret key");
+  
+
 
   const url='https://602-KKD-677.mktorest.com/identity/oauth/token?grant_type=client_credentials&client_id=' + client_id + '&client_secret=' + secretkey
   console.log(url)
