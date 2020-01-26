@@ -35,7 +35,7 @@ function foo(email) {
    var obj = JSON.parse(Http.responseText);
     
     console.log(typeof obj.access_token)
-   var url = 'https://602-KKD-677.mktorest.com//rest/v1/leads/describe.json?access_token=' + obj.access_token  + '&filterType=email&filterValues=' + email '&fields=firstName,lastName,email'
+   var url = 'https://602-KKD-677.mktorest.com//rest/v1/leads/describe.json?access_token=' + obj.access_token  + '&filterType=email&filterValues=' + email +'&fields=firstName,lastName,email'
       console.log(url)
    
 }}
