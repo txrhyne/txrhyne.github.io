@@ -16,7 +16,7 @@ var image  = ''
 
 
 
-function foo() {
+function foo(email) {
 
 
   const Http = new XMLHttpRequest();
@@ -35,12 +35,13 @@ function foo() {
    var obj = JSON.parse(Http.responseText);
     
     console.log(typeof obj.access_token)
-   var url = 'https://602-KKD-677.mktorest.com//rest/v1/leads/describe.json?access_token=' + obj.access_token
+   var url = 'https://602-KKD-677.mktorest.com//rest/v1/leads/describe.json?access_token=' + obj.access_token  + '&filterType=email&filterValues=' + email '&fields=firstName,lastName,email'
       console.log(url)
    
 }}
 
-var response = foo()
+  
+
 
   // const url = 'https://602-KKD-677.mktorest.com//rest/v1/leads/describe.json?access_token=' + access_token;
 
@@ -168,6 +169,8 @@ MktoForms2.loadForm("//app-sjdemo1.marketo.com", "602-KKD-677", 1046, function(f
         // We'll just alert them to show the principle
         
         alert("Submitted values: " + JSON.stringify(vals.Email));
+        var email = JSON.stringify(vals.Email)
+        foo(email)
     });
 }); 
     </script>
