@@ -27,7 +27,15 @@ function foo() {
 
 
   const url='https://602-KKD-677.mktorest.com/identity/oauth/token?grant_type=client_credentials&client_id=' + client_id + '&client_secret=' + secretkey
-  console.log(url)
+  
+  const Http = new XMLHttpRequest();
+
+  Http.open("GET", url);
+  Http.send();
+
+  Http.onreadystatechange = (e) => {
+   console.log(Http.responseText)
+  }
 
 }
 
