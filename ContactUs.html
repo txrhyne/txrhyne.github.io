@@ -33,8 +33,10 @@ function foo() {
   Http.send();
 
   Http.onreadystatechange = (e) => {
-   var response = Http.responseText
-   console.log(response)
+   var response = Http.responseText;
+   var access_token = response.access_token;
+   const url = 'https://602-KKD-677.mktorest.com//rest/v1/leads/describe.json?access_token=' + access_token;
+   console.log(url)
   }
   return response
 
