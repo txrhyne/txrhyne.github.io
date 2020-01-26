@@ -161,18 +161,19 @@ body {
 
 MktoForms2.loadForm("//app-sjdemo1.marketo.com", "602-KKD-677", 1046, function(form) {
     // Add an onSubmit handler
-    form.onSubmit(function(event){
-        // Get the form field values
-        var vals = form.vals();
+     form.onSuccess(function(values, followUpUrl) {
+        // Get the form's jQuery element and hide it
+       	var vals = form.vals();
         // You may wish to call other function calls here, for example to fire google analytics tracking or the like
         // callSomeFunction(vals);
         // We'll just alert them to show the principle
-        event.preventDefault()
-        alert("Submitted values: " + JSON.stringify(vals.Email));
-        var email = JSON.stringify(vals.Email)
-        foo(email)
-    });
-}); 
+        //alert("Submitted values: " + JSON.stringify(vals.Email));
+
+       foo(JSON.stringify(vals.Email))
+        return false;
+    })
+    	});
+      
     </script>
 </div>
   <div id = 'headshot'>
