@@ -34,10 +34,10 @@ function foo() {
   Http.onreadystatechange = (e) => {
    var response = Http.responseText;
    var access_token = JSON.stringify(response.access_token);
-   console.log(response)
+       console.log(access_token)
+
    const url = 'https://602-KKD-677.mktorest.com//rest/v1/leads/describe.json?access_token=' + access_token;
    console.log(url)
-   console.log(access_token)
    
     
    
