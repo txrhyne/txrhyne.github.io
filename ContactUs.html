@@ -36,7 +36,13 @@ function foo(email) {
     
     console.log(typeof obj.access_token)
    var url = 'https://602-KKD-677.mktorest.com//rest/v1/leads/describe.json?access_token=' + obj.access_token  + '&filterType=email&filterValues=' + email +'&fields=firstName,lastName,email'
-      console.log(url)
+      const Http1 = new XMLHttpRequest();
+    Http1.open("GET", url);
+  Http1.send();
+    Http.onreadystatechange = (e) => {
+    console.log(Http1.responseText)
+    
+    }
    
 }}
 
