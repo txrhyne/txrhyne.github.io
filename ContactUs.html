@@ -39,7 +39,7 @@ function foo(email) {
       const Http1 = new XMLHttpRequest();
     Http1.open("GET", url);
   Http1.send();
-    Http.onreadystatechange = (e) => {
+    Http1.onreadystatechange = (e) => {
     console.log(Http1.responseText)
     
     }
