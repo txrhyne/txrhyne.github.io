@@ -14,42 +14,6 @@ var image  = ''
 
 
 
-
-
-function foo(email) {
-
-
-  const Http = new XMLHttpRequest();
-  var secretkey = prompt("What's your secret key");
-
-  var client_id = prompt("What is your client_id")
-  
-
-  const url='https://602-KKD-677.mktorest.com/identity/oauth/token?grant_type=client_credentials&client_id=' + client_id + '&client_secret=' + secretkey
-  
-
-  Http.open("GET", url);
-  Http.send();
-
-  Http.onreadystatechange = (e) => {
-   var obj = JSON.parse(Http.responseText);
-    
-   var url = 'https://602-KKD-677.mktorest.com//rest/v1/leads.json?access_token=' + obj.access_token  + '&filterType=email&filterValues=' + email +'&fields=firstName,lastName,email,headshot'
-      const Http1 = new XMLHttpRequest();
-    Http1.open("GET", url);
-  Http1.send();
-    Http1.onreadystatechange = (e) => {
-    console.log(url)
-    console.log(Http1.responseText)
-      var headshotobj = JSON.parse(Http1.responseText)
-      
-      var imageurl = headshotobj.result[0]['headshot']
-      document.getElementById('mktoForm_1046').innerHTML =  '<img src =' + imageurl + '>'
-    
-    }
-   
-}}
-
   
 
 
